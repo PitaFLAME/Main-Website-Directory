@@ -1,0 +1,262 @@
+:root {
+    --navbar-color: linear-gradient(165deg,
+                                    #313334,
+                                    #071013);
+    --main-background: linear-gradient(115deg,
+                                       #999999,
+                                       #071013 85%);
+    --text-background: linear-gradient(90deg,
+                                       rgba(255,255,255,0.9),
+                                       rgba(255,255,255,0.6));
+    
+    
+    
+    --rich-text-color: #99B3B9;
+    --title-text-color: white;
+    --plain-text-color: white;
+    --title-font: Poppins, Trebuchet MS, Sans-serif;
+    --primary-font: system-ui, Poppins, Trebuchet MS, Sans-serif;
+    --standout-font: Allison, Poppins, Trebuchet MS, Sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+  }
+  
+  html {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .header-bar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: var(--navbar-color);
+    min-height: 40px;
+    max-height: 100px;
+    height: 5vw;
+    z-index: 4;
+  }
+  
+  .navbar-div {
+    display: flex;
+    position: fixed;
+    width: 35vw;
+    min-height: 40px;
+    max-height: 100px;
+    height: 5vw;
+    right: 5%;
+    align-items: center;
+    justify-content: flex-end;
+    
+  }
+  
+  #navbar {
+    width: 100%;
+  }
+  
+  #navlist {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style-type: none;
+  }
+  
+  
+  .nav {
+    font-weight: bold;
+    font-size: 1.6vw;
+    color: var(--plain-text-color);
+  }
+  
+  #link, #link:visited {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    color: var(--plain-text-color);
+  }
+  
+  .nav:nth-of-type(1) {
+    margin-left: 0;
+  }
+  
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-background {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    
+    background: var(--main-background);
+    z-index: -1;
+  }
+  
+  .navbar-spacer {
+    min-height: 40px;
+    max-height: 100px;
+    height: 5vw;
+  }
+  
+  .project-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    height: 10vh;
+    max-height: 10vw;
+    margin: 10px 0 20px 0;
+
+    z-index: 3;
+  }
+
+  .header-img {
+    width: 120px;
+    height: auto;
+    margin-right: 15px;
+    margin-top: 60px;
+    
+  }
+  
+  h1.project-title {
+    color: var(--title-text-color);
+    font-size: 50px;
+    font-family: var(--title-font);
+    z-index: 3;
+  }
+
+  .git-link {
+    margin-left: auto;
+  }
+
+  .git-link img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .project-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: auto;
+    padding-bottom: 80px;
+    width: 80%;
+    
+    background: var(--text-background);
+    z-index: 1;
+  }
+  
+  .project-textbox {
+    display: flex;
+    flex-direction: column;
+    
+    width: 92%;
+    height: 100%;
+    padding-top: 45px;
+    
+    z-index: 3;
+    
+  }
+  
+  .project-textbox p, .project-textbox h2, .project-textbox h3 {
+    color: black;
+  }
+  
+  .project-textbox p {
+    font-size: 20px;
+    margin: 0 0 25px 0;
+    text-indent: 40px;
+  }
+  
+  .project-textbox h2 {
+    font-size: 32px;
+    margin: 0 0 10px -10px;
+    font-family: var(--title-font);
+  }
+  
+  .project-textbox h3 {
+    font-size: 24px;
+    margin: 0 0 10px 10px;
+  }
+
+  .cooldown-creation-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 0;
+  }
+
+  .cooldown-creation-paragraph {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cooldown-creation-img {
+    width: auto;
+    height: 60vh;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 0;
+  }
+
+  .main-view-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 0;
+  }
+
+  .main-view-paragraph {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-view-img {
+    width: auto;
+    height: 60vh;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 0;
+  }
+
+
+  .code-div {
+    width: 90%;
+    padding: 10px 15px;
+    margin: 0 0 40px 0;
+    background-color: black;
+    border: 3px white solid;
+  }
+  
+  .project-textbox pre {
+    color: white;
+    font-family: monospace;
+  }
+  
+  .updates p {
+    margin: 8px 0 0 0;
+    text-indent: 0;
+  }
+
+  .updates li p {
+    font-size: 18px;
+  }
+
+  .updates {
+    margin: 0 80px;
+  }
+
+
+
+  
+  
+  
+  .footer {
+    height: 100px;
+    width: 10px;
+  }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./cooldowns_styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" />
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  
+  <body>
+    <main>
+      <header id="header">
+        <div class="header-bar">
+          <div class="navbar-div">
+            <nav id="navbar">
+              <ul id="navlist">
+                <li></li>
+                <li class="nav">
+                  <a id="link" href="../">About</a>
+                </li>
+                <li class="nav">
+                  <a id="link" href="../#projects">Projects</a>
+                </li>
+                <li class="nav">
+                  <a id="link" href="../#contact">Contact</a>
+                </li>
+                <li></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section class="main-section">
+        <div class="main-background"></div>
+        <div class="navbar-spacer"></div>
+        <div class="project-header">
+          <img class="header-img" src="./assets/Icon.png" />
+          <h1 class="project-title">Cooldowns App</h1>
+          <a class="git-link" href="https://github.com/PitaFLAME/Cooldowns" target="_blank" title="GitHub Repository">
+            <img src="./assets/external-site.png" />
+          </a>
+        </div>
+        <div class="project-main">
+          <div class="project-textbox">
+            <h2>Project Overview</h2>
+            <p>Welcome to my Cooldowns App project page.  This Lifestyle app for mobile platforms was developed using Dart and is designed to help manage impulsivity and keep users accountable to the goals they want to set for themselves.  Whether you want to keep yourself from eating out too often, manage breaks from your workout or study, this life-gamifying application seeks to aid you.</p>
+            
+            <p>In its current state, the app allows you to choose from a short list of icons to represent your Cooldown, and customize the recharge time, number of charges, and the recharge style for it.  On the main Cooldowns view, your created Cooldowns will appear as either available, or with a "dimmed" overlay to indicate how long it will be until it is available again.  The idea is to discourage the user from performing a specific action that they want to limit by treating that action as "On Cooldown", or unavailable to them.</p>
+            
+            <p></p>
+            
+            
+            <h2>Key Features</h2>
+            <h3>Cooldown Creation</h3>
+            <div class="cooldown-creation-container">
+              <div class="cooldown-creation-paragraph">
+                <p>The app will be empty when you first download it, so the first thing you should do is create a new Cooldown.  Creating new Cooldowns is fairly straightforward.  You can specify the name of the Cooldown, its duration, and choose from a currently short list of icons to represent it on the main screen.</p>
+                <p>You can also expand the "Advanced" menu to specify a number of charges the cooldown has, and how those charges recharge.  For Parallel, each expended charge of the Cooldown will recharge independently from one another.  In Series, however, only one charge will recharge at a time and once one charge is available, the next one will begin recharging.</p>
+                <div class="code-div">
+                  <pre>
+void _createTimer() {
+    final duration = Duration(
+        days: _days, hours: _hours, minutes: _minutes, seconds: _seconds);
+        final endTimeNulls = List&ltDateTime?&gt.filled(_numCharges, null);
+        final newTimer = TimerObject(
+            name: _name,
+            endTime: endTimeNulls,
+            charges: _numCharges,
+            iconPath: _iconPath,
+            duration: duration,
+            rechargeType: _chargeType,
+            remainingCharges: _numCharges,
+    );
+
+    Navigator.pop(context, newTimer);
+}</pre>
+                </div>
+              </div>
+              <div>
+                <img class="cooldown-creation-img" src="./assets/Create_Cooldown_View.png" />
+              </div>
+            </div>
+            <h3>Main Cooldowns View</h3>
+            <div class="main-view-container">
+              <div class="main-view-paragraph">
+                <p>The main Cooldowns view page displays all of the Cooldowns you've created.  The icon will appear normal if it is available. If the Cooldown has multiple charges available, it will have a small badge with a number to indicate how many charges are available.  If a Cooldown is not available, it will appear with an animated "dimmed" overlay and a timer to indicate how long until it is available again.</p>
+                <div class="code-div">
+                  <pre>
+Widget _buildCooldownList() {
+    return ListView.builder(
+        itemCount: _cooldowns.length,
+        itemBuilder: (context, index) {
+            final cooldown = _cooldowns[index];
+            final isActive = cooldown.isActive;
+
+            return ListTile(
+                title: Text(cooldown.name),
+                subtitle: Text("${cooldown.duration} seconds"),
+                trailing: Icon(isActive ? Icons.timer : Icons.timer_off),
+                tileColor: isActive ? Colors.grey[300] : null,
+            );
+        },
+    );
+}</pre>
+                </div>
+              </div>
+              <img class="main-view-img" src="./assets/Cooldowns_Main_View.png" />
+            </div>
+            <h3>Future Updates</h3>
+            <p>Going forward, the following features are planned to be added:</p>
+            <ul class="updates">
+              <li>
+                <p>Custom Icons.  Users will be able to upload photos from their device to create icons for their cooldowns.</p>
+              </li>
+              <li>
+                <p>Custom Themes.  Users can customize the colors of the app and how it looks.</p>
+              </li>
+              <li>
+                <p>Integrated Home Screen Widgets.  Users should be able to put select Cooldowns on their devices Home Screen via a widget.</p>
+              </li>
+            </ul>
+            
+            
+          </div> 
+        </div>
+        <div class="footer"></div>
+      </section>
+      
+      
+    </main>
+  </body>
+</html>
