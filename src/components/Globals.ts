@@ -1,4 +1,4 @@
-import { getColorProfile } from "./GenerateParty";
+
 
 
 const sizeHMap: { [key: number]: string } = {
@@ -28,26 +28,25 @@ const sizeWMap: { [key: number]: string } = {
     10: 'col-span-2',
     11: 'col-span-3',
 };
+
 /* 1=1x1 2=1x2 3=2x1 4=2x2 5=4x4 6=4x6 7=6x4
 8=8x4 9=2x4 10=4x2 11=2x3 12:*/
 
-const accentMap: { [key: number]: string }[] = [
-    {0: 'bg-slate-500', 1: 'bg-slate-600', 2: 'bg-slate-700', 3: 'bg-slate-800', 4: 'bg-slate-900'},
-    {0: 'bg-zinc-500', 1: 'bg-zinc-600', 2: 'bg-zinc-700', 3: 'bg-zinc-800', 4: 'bg-zinc-900'},
-    {0: 'bg-teal-500', 1: 'bg-teal-600', 2: 'bg-teal-700', 3: 'bg-teal-800', 4: 'bg-teal-900'},
-    {0: 'bg-blue-500', 1: 'bg-blue-600', 2: 'bg-blue-700', 3: 'bg-blue-800', 4: 'bg-blue-900'},
+const accents = [
+    ['-slate-100', '-slate-200', '-slate-700', '-slate-800', '-slate-900'],
+    ['-zinc-100', '-zinc-200', '-zinc-700', '-zinc-800', '-zinc-900'],
+    ['-teal-100', '-teal-200', '-teal-700', '-teal-800', '-teal-900'],
+    ['-blue-100', '-blue-200', '-blue-700', '-blue-800', '-blue-900'],
 ]
 
 
-export const getAccent = (accentID: number) => {
-    return accentMap[getColorProfile()][accentID]
+export const getAccent = (accentID: number, prefix: string) => {
+    return prefix + accents[getColorProfile()][accentID]
 }
 
-export const getHSize = (sizeType: number) => {
-    return sizeHMap[sizeType]
+export const getSize = (sizeType: number) => {
+    return [sizeWMap[sizeType], sizeHMap[sizeType]]
 }
-
-export const getWSize = (sizeType: number) => {
-    return sizeWMap[sizeType]
+const getColorProfile = () => {
+    return 0
 }
-

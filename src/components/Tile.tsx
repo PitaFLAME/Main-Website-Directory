@@ -1,23 +1,22 @@
 import { ReferrerEnum } from "next/dist/lib/metadata/types/metadata-types"
 import Link from "next/link"
-import { getAccent, getHSize, getWSize } from "./Globals";
+import { getAccent, getSize } from "./Globals";
 
 
-const ContentTile = ({accentID, render, linkTo, sizeType}:{
+const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{
     render?: React.ReactNode,
     accentID?: number,
     linkTo?: string,
     sizeType?: number,
-
+    orientation?: number,
     
 }) => {
-    const sizeH = sizeType ? getHSize(sizeType) : 'row-span-1';
-    const sizeW = sizeType ? getWSize(sizeType) : 'col-span-1';
-    const accent = accentID ? `${getAccent(accentID)}` : `${getAccent(0)}`;
+    const size = sizeType ? getSize(sizeType) : ['row-span-1','col-span-1', null];
+    const accent = accentID ? `${getAccent(accentID, 'bg')}` : `${getAccent(0, 'bg')}`;
 
     return (
         <div className={`h-full
-            ${sizeH} ${sizeW}
+            ${size[0]} ${size[1]}
             `}>
             <div className={`${accent} rounded-xl w-full h-full overflow-hidden`}>
                 {render}
