@@ -21,9 +21,18 @@ const config: Config = {
     'border-zinc-100', 'border-zinc-200', 'border-zinc-700', 'border-zinc-800', 'border-zinc-900',
     'border-teal-100', 'border-teal-200', 'border-teal-700', 'border-teal-800', 'border-teal-900',
     'border-blue-100', 'border-blue-200', 'border-blue-700', 'border-blue-800', 'border-blue-900',
+  
+    'text-slate-100', 'text-slate-200', 'text-slate-700', 'text-slate-800', 'text-slate-900',
+    'text-zinc-100', 'text-zinc-200', 'text-zinc-700', 'text-zinc-800', 'text-zinc-900',
+    'text-teal-100', 'text-teal-200', 'text-teal-700', 'text-teal-800', 'text-teal-900',
+    'text-blue-100', 'text-blue-200', 'text-blue-700', 'text-blue-800', 'text-blue-900',
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        allison: ["Allison", "cursive"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

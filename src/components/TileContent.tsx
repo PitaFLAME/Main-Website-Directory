@@ -3,6 +3,7 @@ import Image from "next/image"
 import { getSvg } from "./SvgData";
 import { getAccent } from "./Globals";
 import { get } from "http";
+import { Quote } from "lucide-react";
 
 const icons = [
     "git", "vscode", "dart", "flutter", "typescript", "js", "nextjs", "python", "swift",
@@ -23,9 +24,18 @@ const getIcons = () => {
 
 
 const content = [
-    (   <div key={0}>
-            <h2 className={`${getAccent(1, 'text')}`}>Hi, my name is <span>Pita</span></h2>
-            <p>I do a lot of <span>things</span></p>
+    (   <div key={0} className="flex flex-col items-center">
+            <h2 className={`${getAccent(1, 'text')} text-3xl font-poppins mr-[15vw] mt-12`}>
+                Hi, my name is&nbsp;
+                <span className="text-4xl ml-2 font-allison">Pita</span>
+            </h2>
+            <div className="flex flex-row">
+                <p>I do a lot of <span>things</span></p>
+                <div className="">
+
+                </div>
+            </div>
+
         </div> ), ( <div key={1} className="relative h-full w-full" >
                 <h2>Education</h2>
                 <h3>Arizona State University</h3>
@@ -52,15 +62,22 @@ const content = [
                    transition-transform duration-500 ease-out transform group-hover:scale-105`}
                     />
 
-        </div> ), ( <div key={4}>
-            <h2 className="">
-                I will not die as I am.  I will live long enough to become somebody else.</h2>
+        </div> ), ( <div key={4} className="relative flex justify-center w-full h-full">
+            <img src="/assets/space.jpg" className="absolute w-full h-full object-cover" />
+            <div className="absolute z-10 mt-12 w-[90%]">
+                <Quote className="w-10 h-10 fill-sky-500 text-sky-400" />
+                <h2 className="text-center text-3xl font-semibold mt-4 leading-normal" >
+                    I will not die as I am.  I will live long enough to become somebody else.
+                </h2>
+                <Quote className="w-10 h-10 fill-sky-500 text-sky-400 ml-auto mt-2" />
+            </div>
 
         </div> ), ( <div key={5} className="relative w-full h-full">
-            <img src="/assets/topography.svg" className="absolute object-cover h-full w-full" />
-            
+            <div className="absolute inset-0 object-cover">
+                {getSvg(1)}
+            </div>
         </div> ), ( <div key={6} className="w-full h-full" >
-            <img src="/assets/space.jpg" className="w-full h-full object-cover" />
+            <h2>Full </h2>
         </div> )
         
 

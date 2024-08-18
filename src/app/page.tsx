@@ -16,7 +16,7 @@ export default function Home() {
           h-[70vh] w-full gap-2">
           
           <Tile sizeType={8} accentID={4} render={getContent(0)} />
-          <Tile sizeType={7} accentID={3} render={getContent(6)} />
+          <Tile sizeType={7} accentID={3} render={getContent(4)} />
           <Tile sizeType={11} accentID={4} />
           <Tile sizeType={3} accentID={3} render={getContent(5)} />
           
