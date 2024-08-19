@@ -4,6 +4,7 @@ import { getSvg } from "./SvgData";
 import { getAccent } from "./Globals";
 import { get } from "http";
 import { Quote } from "lucide-react";
+import ThingsCarousel from "./ThingsCarousel";
 
 const icons = [
     "git", "vscode", "dart", "flutter", "typescript", "js", "nextjs", "python", "swift",
@@ -25,29 +26,41 @@ const getIcons = () => {
 
 const content = [
     (   <div key={0} className="flex flex-col items-center">
-            <h2 className={`${getAccent(1, 'text')} text-3xl font-poppins mr-[15vw] mt-12`}>
+            <h2 className={`${getAccent(1, 'text')} text-3xl font-poppins mt-12 mr-32`}>
                 Hi, my name is&nbsp;
-                <span className="text-4xl ml-2 font-allison">Pita</span>
+                <span className="text-7xl ml-2 font-allison text-slate-200">Pita</span>
             </h2>
-            <div className="flex flex-row">
-                <p>I do a lot of <span>things</span></p>
-                <div className="">
-
+            <div className="flex flex-row w-full h-full px-8 gap-2">
+                <p className="text-right w-full text-lg font-poppins">I do a lot of <span>things</span></p>
+                <div className="flex justify-center w-full">
+                    <ThingsCarousel />
                 </div>
             </div>
 
-        </div> ), ( <div key={1} className="relative h-full w-full" >
-                <h2>Education</h2>
-                <h3>Arizona State University</h3>
-                <p>Bachelor&apos;s in Software Engineering</p>
-                <h3>Cosumnes River College</h3>
-                <p>Bachelor&apos;s in Computer Science</p>
+        </div> ), ( <div key={1} className="relative flex flex-row gap-4 p-6 h-full w-full" >
+            <div className={`h-full w-[1px] ml-2 ${getAccent(2, 'bg')}`} />
+            <div className="flex flex-col w-full gap-2">
+                <h2 className="text-3xl mb-2 font-extralight">Education</h2>
+                <div className="flex flex-row w-full">
+                    <div className="flex flex-col">
+                        <h3 className={`text-xl ${getAccent(1, 'text')}`}>Arizona State University</h3>
+                        <p className="ml-4 text-base font-extralight">Bachelor&apos;s in Software Engineering</p>
+                    </div>
+                    <p className={`ml-auto text-base ${getAccent(2, 'text')}`}>March 2023 - Present</p>
+                </div>
+                <div className="flex flex-row">
+                    <div className="flex flex-col">
+                        <h3 className={`text-xl ${getAccent(1, 'text')}`}>Cosumnes River College</h3>
+                        <p className="ml-4 text-base font-extralight">Bachelor&apos;s in Computer Science</p>
+                    </div>
+                    <p className={`ml-auto text-base ${getAccent(2, 'text')}`}>August 2016 - January 2019</p>
+                </div>
+            </div>
 
         </div> ), ( <div key={2} className="px-8 pt-4">
-            <h2 className="text-2xl font-semibold mb-0.5">Technologies I use</h2>
-            <div className={`w-full h-2 bg-gradient-radial ${getAccent(4, 'from')} to-transparent`}>
-                <div className={`w-full h-2 bg-gradient-to-b ${getAccent(4, 'from')} to-transparent mb-4`} /></div>
-            <div className="relative grid grid-cols-4 gap-6 mt-2">
+            <h2 className="text-2xl font-semibold mb-0.5 font-poppins">Technologies I use</h2>
+            <div className={`w-full h-0.5 ${getAccent(4, 'bg')}`} />
+            <div className="relative grid grid-cols-4 gap-6 mt-3">
                 {getIcons()}
             </div>
             
@@ -66,7 +79,7 @@ const content = [
             <img src="/assets/space.jpg" className="absolute w-full h-full object-cover" />
             <div className="absolute z-10 mt-12 w-[90%]">
                 <Quote className="w-10 h-10 fill-sky-500 text-sky-400" />
-                <h2 className="text-center text-3xl font-semibold mt-4 leading-normal" >
+                <h2 className="text-center text-3xl font-semibold mt-4 leading-normal font-poppins" >
                     I will not die as I am.  I will live long enough to become somebody else.
                 </h2>
                 <Quote className="w-10 h-10 fill-sky-500 text-sky-400 ml-auto mt-2" />

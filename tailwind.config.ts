@@ -30,8 +30,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        allison: ["Allison", "cursive"],
+        poppins: ['var(--font-poppins)', "sans-serif"],
+        allison: ['var(--font-allison)', 'cursive'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
