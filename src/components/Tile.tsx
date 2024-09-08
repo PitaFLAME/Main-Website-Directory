@@ -5,14 +5,16 @@ import { getAccent, getSize } from "./Globals";
 
 const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{
     render?: React.ReactNode,
-    accentID?: number,
+    accentID: number | [number, number],
     linkTo?: string,
     sizeType?: number,
     orientation?: number,
     
 }) => {
     const size = sizeType ? getSize(sizeType) : ['row-span-1','col-span-1', null];
-    const accent = accentID ? `${getAccent(accentID, 'bg')}` : `${getAccent(0, 'bg')}`;
+    
+    const accent = Array.isArray(accentID) ? `bg-gradient ${getAccent(accentID[0], 'from')} ${getAccent(accentID[1], 'to')}` 
+        :  `${getAccent(accentID, 'bg')}`
 
     return (
         <div className={`h-full

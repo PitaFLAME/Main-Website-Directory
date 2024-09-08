@@ -24,7 +24,7 @@ export default function Home() {
 
           <Tile sizeType={7} accentID={3} render={getContent(2)} />
           <Tile sizeType={9} accentID={2} />
-          <Tile sizeType={8} accentID={3} render={getContent(1)} />
+          <Tile sizeType={8} accentID={[3,2]} render={getContent(1)} />
           
 
         </div>
