@@ -1,8 +1,6 @@
-import { ReferrerEnum } from "next/dist/lib/metadata/types/metadata-types"
-import Link from "next/link"
+"use client"
+
 import { getAccent, getSize } from "./Globals";
-import { PassThrough } from "stream";
-import { transform } from "next/dist/build/swc";
 
 
 const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{

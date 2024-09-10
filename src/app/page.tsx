@@ -3,6 +3,7 @@ import Tile from '../components/Tile';
 import { getContent } from '@/components/TileContent';
 import { PartyPopper } from 'lucide-react';
 import PartyTime from '@/components/party-mode/PartyButton';
+import TileGroup from '@/components/TileGroup';
 
 
 export default function Home() {
@@ -17,14 +18,14 @@ export default function Home() {
           
           <Tile sizeType={8} accentID={4} render={getContent(0)} orientation={4} />
           <Tile sizeType={7} accentID={3} render={getContent(4)} orientation={1} />
-          <Tile sizeType={11} accentID={4} orientation={4} />
-          <Tile sizeType={3} accentID={3} render={getContent(5)} orientation={4} />
+          <TileGroup sizeType={9} orientation={4} tiles={[ (<Tile sizeType={11} accentID={4} key={0} />),
+            (<Tile sizeType={3} accentID={3} render={getContent(5)} key={1} />) ]} />
           
           <Tile sizeType={5} accentID={4} render={getContent(3)} />
 
           <Tile sizeType={7} accentID={3} render={getContent(2)} orientation={3} />
           <Tile sizeType={9} accentID={2} orientation={2} />
-          <Tile sizeType={8} accentID={[3,2]} render={getContent(1)} orientation={2} />
+          <Tile sizeType={8} accentID={4} render={getContent(1)} orientation={2} />
           
 
         </div>
