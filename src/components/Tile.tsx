@@ -1,6 +1,8 @@
 import { ReferrerEnum } from "next/dist/lib/metadata/types/metadata-types"
 import Link from "next/link"
 import { getAccent, getSize } from "./Globals";
+import { PassThrough } from "stream";
+import { transform } from "next/dist/build/swc";
 
 
 const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{
@@ -16,10 +18,18 @@ const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{
     const accent = Array.isArray(accentID) ? `bg-gradient ${getAccent(accentID[0], 'from')} ${getAccent(accentID[1], 'to')}` 
         :  `${getAccent(accentID, 'bg')}`
 
+
+        const transformStyle =
+            orientation === 1 ? 'hover:-translate-y-10' :
+            orientation === 2 ? 'hover:translate-x-10' :
+            orientation === 3 ? 'hover:translate-y-10' :
+            orientation === 4 ? 'hover:-translate-x-10' :
+            ''
+
+
     return (
-        <div className={`h-full
-            ${size[0]} ${size[1]}
-            `}>
+        <div className={`h-full transition-transform duration-500 ${transformStyle}
+            ${size[0]} ${size[1]}`}>
             <div className={`${accent} rounded-xl w-full h-full overflow-hidden`}>
                 {render}
             </div>
