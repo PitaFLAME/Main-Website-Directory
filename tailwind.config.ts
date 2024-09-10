@@ -26,6 +26,16 @@ const config: Config = {
     'text-zinc-100', 'text-zinc-200', 'text-zinc-700', 'text-zinc-800', 'text-zinc-900',
     'text-teal-100', 'text-teal-200', 'text-teal-700', 'text-teal-800', 'text-teal-900',
     'text-blue-100', 'text-blue-200', 'text-blue-700', 'text-blue-800', 'text-blue-900',
+
+    'from-slate-100', 'from-slate-200', 'from-slate-700', 'from-slate-800', 'from-slate-900',
+    'from-zinc-100', 'from-zinc-200', 'from-zinc-700', 'from-zinc-800', 'from-zinc-900',
+    'from-teal-100', 'from-teal-200', 'from-teal-700', 'from-teal-800', 'from-teal-900',
+    'from-blue-100', 'from-blue-200', 'from-blue-700', 'from-blue-800', 'from-blue-900',
+
+    'to-slate-100', 'to-slate-200', 'to-slate-700', 'to-slate-800', 'to-slate-900',
+    'to-zinc-100', 'to-zinc-200', 'to-zinc-700', 'to-zinc-800', 'to-zinc-900',
+    'to-teal-100', 'to-teal-200', 'to-teal-700', 'to-teal-800', 'to-teal-900',
+    'to-blue-100', 'to-blue-200', 'to-blue-700', 'to-blue-800', 'to-blue-900',
   ],
   theme: {
     extend: {

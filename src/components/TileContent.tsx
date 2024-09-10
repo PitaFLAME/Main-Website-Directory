@@ -5,6 +5,7 @@ import { getAccent } from "./Globals";
 import { get } from "http";
 import { Quote } from "lucide-react";
 import ThingsCarousel from "./ThingsCarousel";
+import React from "react";
 
 const icons = [
     "git", "vscode", "dart", "flutter", "typescript", "js", "nextjs", "python", "swift",
@@ -26,16 +27,16 @@ const getIcons = () => {
 
 const content = [
     (   <div key={0} className="flex flex-col items-center">
-            <h2 className={`${getAccent(1, 'text')} text-3xl font-poppins mt-12 mr-32`}>
+            <h2 className={`${getAccent(1, 'text')} text-3xl font-poppins mt-24`}>
                 Hi, my name is&nbsp;
                 <span className="text-7xl ml-2 font-allison text-slate-200">Pita</span>
             </h2>
-            <div className="flex flex-row w-full h-full px-8 gap-2">
+            {/*<div className="flex flex-row w-full h-full px-8 gap-2">
                 <p className="text-right w-full text-lg font-poppins">I do a lot of <span>things</span></p>
                 <div className="flex justify-center w-full">
                     <ThingsCarousel />
-                </div>
-            </div>
+                </div> 
+            </div>*/}
 
         </div> ), ( <div key={1} className="relative flex flex-row gap-4 p-6 h-full w-full" >
             <div className={`h-full w-[1px] ml-2 ${getAccent(2, 'bg')}`} />
@@ -58,8 +59,8 @@ const content = [
             </div>
 
         </div> ), ( <div key={2} className="px-8 pt-4">
-            <h2 className="text-2xl font-semibold mb-0.5 font-poppins">Technologies I use</h2>
-            <div className={`w-full h-0.5 ${getAccent(4, 'bg')}`} />
+            <h2 className={`text-2xl mb-0.5 font-poppins font-light`}>
+                Technologies I use</h2>
             <div className="relative grid grid-cols-4 gap-6 mt-3">
                 {getIcons()}
             </div>
@@ -86,9 +87,8 @@ const content = [
             </div>
 
         </div> ), ( <div key={5} className="relative w-full h-full">
-            <div className="absolute inset-0 object-cover">
-                {getSvg(1)}
-            </div>
+            {React.cloneElement(getSvg(1), { className:"h-72 w-72"})}
+            
         </div> ), ( <div key={6} className="w-full h-full" >
             <h2>Full </h2>
         </div> )
