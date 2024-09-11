@@ -3,7 +3,7 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import PartyTime from '@/components/party-mode/PartyButton';
 import ContentSelector from '@/components/ContentSelector';
-import HomeContent from '@/components/Home/HomeContent';
+import HomePage from '@/components/Home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
 
 
@@ -16,11 +16,10 @@ export default function Home() {
       <main className="bg-slate-950">
 
         <MaxWidthWrapper className='relative flex flex-col justify-center items-center h-screen'>
-          { activePage === 0 ? <HomeContent />
+          { activePage === 0 ? <HomePage />
           : activePage === 1 ? <></>
           : activePage === 2 ? <></>
-          : <></>
-          }
+          : <></> }
           <ContentSelector />
 
           <PartyTime />

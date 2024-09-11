@@ -4,7 +4,7 @@ import TileGroup from "../TileGroup"
 
 
 
-const HomeContent = () => {
+const HomePage = () => {
 
 
     return (
@@ -30,4 +30,4 @@ const HomeContent = () => {
     )
 }
 
-export default HomeContent
+export default HomePage
