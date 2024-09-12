@@ -3,22 +3,23 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import PartyTime from '@/components/party-mode/PartyButton';
 import ContentSelector from '@/components/ContentSelector';
-import HomePage from '@/components/Home/HomePage';
+import HomePage from '@/components/home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
+import ProjectPage from '@/components/project/ProjectPage';
+import ContactPage from '@/components/contact/ContactPage';
 
 
-export default function Home() {
+const Page = () => {
 
   const { activePage } = usePageContext()
 
   return (
-    <PageProvider>
-      <main className="bg-slate-950">
+    <main className="bg-slate-950">
 
         <MaxWidthWrapper className='relative flex flex-col justify-center items-center h-screen'>
           { activePage === 0 ? <HomePage />
-          : activePage === 1 ? <></>
-          : activePage === 2 ? <></>
+          : activePage === 1 ? <ProjectPage />
+          : activePage === 2 ? <ContactPage />
           : <></> }
           <ContentSelector />
 
@@ -26,6 +27,15 @@ export default function Home() {
         </MaxWidthWrapper>
 
       </main>
+  )
+}
+
+
+export default function Home() {
+  
+  return (
+    <PageProvider>
+      <Page />
     </PageProvider>
   );
 }

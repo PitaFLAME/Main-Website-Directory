@@ -1,6 +1,6 @@
-import Tile from "../Tile"
-import { getContent } from "../TileContent"
-import TileGroup from "../TileGroup"
+import Tile from "../Tiles/Tile"
+import { getContent } from "./TileContent"
+import TileGroup from "../Tiles/TileGroup"
 
 
 

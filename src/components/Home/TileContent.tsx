@@ -1,7 +1,10 @@
+"use client"
+
+
 import StackIcon from "tech-stack-icons"
 import Image from "next/image"
-import { getSvg } from "./SvgData";
-import { getAccent } from "./Globals";
+import { getSvg } from "../SvgData";
+import { getAccent } from "../Globals";
 import { get } from "http";
 import { Quote } from "lucide-react";
 import ThingsCarousel from "./ThingsCarousel";
@@ -92,7 +95,6 @@ const content = [
         </div> ), ( <div key={6} className="w-full h-full" >
             <h2>Full </h2>
         </div> )
-        
 
 ]
 

@@ -16,7 +16,7 @@ const defaultContextValue: PageContextType = {
 const PageContext = createContext<PageContextType>(defaultContextValue);
 
 export const PageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [activePage, setActivePage] = useState<number>(1);
+  const [activePage, setActivePage] = useState<number>(0);
 
   return (
     <PageContext.Provider value={{ activePage, setActivePage }}>

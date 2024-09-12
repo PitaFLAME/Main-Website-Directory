@@ -1,5 +1,5 @@
-import { getAccent } from "./Globals"
-import { getSvg } from "./SvgData"
+import { getAccent } from "../Globals"
+import { getSvg } from "../SvgData"
 
 
 
