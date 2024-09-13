@@ -3,9 +3,9 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import PartyTime from '@/components/party-mode/PartyButton';
 import ContentSelector from '@/components/ContentSelector';
-import HomePage from '@/components/home/HomePage';
+import HomePage from '@/components/Home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
-import ProjectPage from '@/components/project/ProjectPage';
+import ProjectPage from '@/components/Project/ProjectPage';
 import ContactPage from '@/components/contact/ContactPage';
 
 
