@@ -1,38 +1,41 @@
+"use client"
+
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import Tile from '../components/Tile';
-import { getContent } from '@/components/TileContent';
-import { PartyPopper } from 'lucide-react';
 import PartyTime from '@/components/party-mode/PartyButton';
-import TileGroup from '@/components/TileGroup';
+import ContentSelector from '@/components/ContentSelector';
+import HomePage from '@/components/home/HomePage';
+import { PageProvider, usePageContext } from '@/components/PageContext';
+import ProjectPage from '@/components/project/ProjectPage';
+import ContactPage from '@/components/contact/ContactPage';
 
 
-export default function Home() {
+const Page = () => {
+
+  const { activePage } = usePageContext()
+
   return (
     <main className="bg-slate-950">
 
-      <MaxWidthWrapper className='relative flex items-center h-screen'>
-        <div className="grid 
-          grid-cols-8 grid-rows-8
-          md:grid-cols-12 md:grid-rows-12
-          h-[70vh] w-full gap-2">
-          
-          <Tile sizeType={8} accentID={4} render={getContent(0)} orientation={4} />
-          <Tile sizeType={7} accentID={3} render={getContent(4)} orientation={1} />
-          <TileGroup sizeType={9} orientation={4} tiles={[ (<Tile sizeType={11} accentID={4} key={0} />),
-            (<Tile sizeType={3} accentID={3} render={getContent(5)} key={1} />) ]} />
-          
-          <Tile sizeType={5} accentID={4} render={getContent(3)} />
+        <MaxWidthWrapper className='relative flex flex-col justify-center items-center h-screen'>
+          { activePage === 0 ? <HomePage />
+          : activePage === 1 ? <ProjectPage />
+          : activePage === 2 ? <ContactPage />
+          : <></> }
+          <ContentSelector />
 
-          <Tile sizeType={7} accentID={3} render={getContent(2)} orientation={3} />
-          <Tile sizeType={9} accentID={2} orientation={2} />
-          <Tile sizeType={8} accentID={4} render={getContent(1)} orientation={2} />
-          
+          <PartyTime />
+        </MaxWidthWrapper>
 
-        </div>
+      </main>
+  )
+}
 
-        <PartyTime />
-      </MaxWidthWrapper>
 
-    </main>
+export default function Home() {
+  
+  return (
+    <PageProvider>
+      <Page />
+    </PageProvider>
   );
 }

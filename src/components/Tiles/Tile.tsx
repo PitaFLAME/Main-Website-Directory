@@ -1,6 +1,6 @@
 "use client"
 
-import { getAccent, getSize } from "./Globals";
+import { getAccent, getSize } from "../Globals";
 
 
 const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{

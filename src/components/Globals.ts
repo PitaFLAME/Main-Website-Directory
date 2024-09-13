@@ -29,7 +29,7 @@ const sizeWMap: { [key: number]: string } = {
     11: 'col-span-3',
 };
 
-/* 1=1x1 2=1x2 3=2x1 4=2x2 5=4x4 6=4x6 7=6x4
+/* 1=1x1 2=1x2 3=2x1 4=2x2 5=4x4 6=6x4 7=4x6
 8=8x4 9=2x4 10=4x2 11=2x3 12:*/
 
 const accents = [
