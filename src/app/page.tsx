@@ -1,7 +1,7 @@
 "use client"
 
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import PartyTime from '@/components/party-mode/PartyButton';
+import PartyTime from '@/components/PartyMode/PartyButton';
 import ContentSelector from '@/components/ContentSelector';
 import HomePage from '@/components/Home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
