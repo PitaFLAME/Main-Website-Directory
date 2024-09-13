@@ -12,7 +12,7 @@ const TileGroupInContext = ({tiles, className, orientation, sizeType}:{
     sizeType?: number
 }) => {
 
-    const { isHovered, toggleHover, stopHover } = useHover()
+    const { isHovered, startHover, stopHover } = useHover()
 
     const rows: { [key: number]: string } = {
         1: 'grid-rows-1',
@@ -58,19 +58,32 @@ const TileGroupInContext = ({tiles, className, orientation, sizeType}:{
     const internalRows = sizeType ? rows[sizeType] : ''
 
     const innerChild = 
-        orientation === 1 || orientation === 3 ? React.cloneElement(tiles[0], { onMouseEnter: () => toggleHover(), onMouseLeave:  () => stopHover() })
-                                               : React.cloneElement(tiles[1], { onMouseEnter: () => toggleHover(), onMouseLeave:  () => stopHover() })
+        orientation === 1 || orientation === 3 ? React.cloneElement(tiles[0])
+                                               : React.cloneElement(tiles[1])
     const outerChild =
         orientation === 1 || orientation === 3 ? React.cloneElement(tiles[1], { orientation: orientation})
                                                : React.cloneElement(tiles[0], { orientation: orientation})
 
 
+    const innerChildSizeType = innerChild.props.sizeType
+    const sizes = getSize(innerChildSizeType)
+
 
     return (
         <div className={`h-full grid gap-2 transition-transform duration-500 ${internalCols} ${internalRows}
             ${className} ${orientation} ${size[0]} ${size[1]} ${isHovered ? transformStyle : ''}`}>
-            {orientation === 2 || orientation === 4 ? outerChild : innerChild}
-            {orientation === 2 || orientation === 4 ? innerChild : outerChild}
+            {orientation === 1 || orientation === 3 ? 
+            <div className={`${sizes[0]} ${sizes[1]} ${rows[innerChildSizeType]} ${cols[innerChildSizeType]}`} 
+                onMouseEnter={ () => startHover() } onMouseLeave={ () => stopHover() }>
+                { innerChild }
+            </div> 
+            : outerChild}
+            {orientation === 1 || orientation === 3 ? outerChild : 
+            <div className={`${sizes[0]} ${sizes[1]} ${rows[innerChildSizeType]} ${cols[innerChildSizeType]}`} 
+            onMouseEnter={ () => startHover() } onMouseLeave={ () => stopHover() }>
+            { innerChild }
+        </div> }
+            
 
         </div>
     )

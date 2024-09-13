@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useCallback, ReactNode } fr
 
 interface TileGroupContextProps {
   isHovered: boolean;
-  toggleHover: () => void;
+  startHover: () => void;
   stopHover: () => void;
 }
 
@@ -12,8 +12,8 @@ export const TileGroupProvider = ({ children }: { children: ReactNode }) => {
   const [isHovered, setHovered] = useState<boolean>(false);
 
   
-  const toggleHover = useCallback(() => {
-    setHovered((prev) => !prev);
+  const startHover = useCallback(() => {
+    setHovered(true);
   }, []);
 
   const stopHover = useCallback(() => {
@@ -22,7 +22,7 @@ export const TileGroupProvider = ({ children }: { children: ReactNode }) => {
 
 
   return (
-    <HoverContext.Provider value={{ isHovered, toggleHover, stopHover }}>
+    <HoverContext.Provider value={{ isHovered, startHover, stopHover }}>
       {children}
     </HoverContext.Provider>
   );
