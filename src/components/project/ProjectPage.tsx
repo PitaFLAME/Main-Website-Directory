@@ -13,12 +13,12 @@ const ProjectPage = () => {
           md:grid-cols-12 md:grid-rows-12
           h-[70vh] w-full gap-2">
           
-          <Tile sizeType={7} accentID={2} orientation={1} render={getContent(0)} />
-          <Tile sizeType={8} accentID={3} orientation={2} render={getContent(3)} />
+          <Tile sizeType={7} accentID={7} orientation={1} render={getContent(0)} />
+          <Tile sizeType={8} accentID={6} orientation={2} render={getContent(3)} />
           <div />
           <div />
-          <Tile sizeType={5} accentID={4} orientation={3} render={getContent(1)} />
-          <Tile sizeType={6} accentID={4} orientation={4} render={getContent(2)} />
+          <Tile sizeType={5} accentID={9} orientation={3} render={getContent(1)} />
+          <Tile sizeType={6} accentID={9} orientation={4} render={getContent(2)} />
           
           
 

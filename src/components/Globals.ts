@@ -33,12 +33,12 @@ const sizeWMap: { [key: number]: string } = {
 8=8x4 9=2x4 10=4x2 11=2x3 12:*/
 
 const accents = [
-    ['-slate-100', '-slate-200', '-slate-700', '-slate-800', '-slate-900', '-slate-950'],
-    ['-zinc-100', '-zinc-200', '-zinc-700', '-zinc-800', '-zinc-900', '-zinc-950'],
-    ['-teal-100', '-teal-200', '-teal-700', '-teal-800', '-teal-900', '-teal-950'],
-    ['-blue-100', '-blue-200', '-blue-700', '-blue-800', '-blue-900', '-blue-950'],
+    ['-white', '-slate-100', '-slate-200', '-slate-300', '-slate-400', '-slate-500', '-slate-600', '-slate-700', '-slate-800', '-slate-900', '-slate-950'],
+    ['-white', '-zinc-100', '-zinc-200', '-zinc-300', '-zinc-400', '-zinc-500', '-zinc-600', '-zinc-700', '-zinc-800', '-zinc-900', '-zinc-950'],
+    ['-white', '-teal-100', '-teal-200', '-teal-300', '-teal-400', '-teal-500', '-teal-600', '-teal-700', '-teal-800', '-teal-900', '-teal-950'],
+    ['-white', '-blue-100', '-blue-200', '-blue-300', '-blue-400', '-blue-500', '-blue-600', '-blue-700', '-blue-800', '-blue-900', '-blue-950'],
 ]
-
+// old: 100, 200, 700, 800, 900, 950
 
 export const getAccent = (accentID: number, prefix: string) => {
     return prefix + accents[getColorProfile()][accentID]
