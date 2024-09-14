@@ -1,45 +1,27 @@
 
 
 import Image from 'next/image'
+import { getSvg } from '../SvgData'
 
 
 const content = [
-    (   <div key={0} className="">
-            <Image
-                className="flex mt-4 ml-4"
-                src="/assets/project-icons/CooldownsIcon.png"
-                alt="Cooldowns Project Logo"
-                width={120}
-                height={120}
+    (             <div key={0} className="relative w-full h-full mt-2">
+            {getSvg(3, 9, "w=[110%] mt-8 p-2")}
 
-            />
-        </div>), (<div key={1} className="relative" >
-            <Image
-                className="absolute right-4 top-12"
-                src="/assets/project-icons/hnewsblue.png"
-                alt="Cooldowns Project Logo"
-                width={120}
-                height={120}
 
-            />
-        </div>), (<div key={2} className="relative" >
-            <Image
-                className="flex mt-4 ml-4"
-                src="/assets/project-icons/GoodBytesLogo.png"
-                alt="Cooldowns Project Logo"
-                width={120}
-                height={120}
+        </div>), (<div key={1} className="flex justify-center h-full w-full" >
+            {getSvg(5, 6, "h-[100%] p-4")}
 
-            />
-        </div>), (<div key={3}>
-            <Image
-                className="flex mt-4 ml-4"
-                src="/assets/project-icons/CDLogo.png"
-                alt="Cooldowns Project Logo"
-                width={200}
-                height={200}
 
-            />
+        </div>), (<div key={2} className="h-full" >
+            {getSvg(4, 6, "h-[100%] py-3 ml-auto mr-8")}
+
+
+        </div>), (<div key={3} className="h-full" >
+            {getSvg(6, 9, "h-[100%] py-2 ml-auto mr-12")}
+
+
+
         </div>)
 ]
 
