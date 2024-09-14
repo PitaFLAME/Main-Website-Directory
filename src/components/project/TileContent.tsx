@@ -6,7 +6,7 @@ import { getSvg } from '../SvgData'
 
 const content = [
     (             <div key={0} className="relative w-full h-full mt-2">
-            {getSvg(3, 9, "w=[110%] mt-8")}
+            {getSvg(3, 9, "w=[110%] mt-8 p-2")}
 
 
         </div>), (<div key={1} className="flex justify-center h-full w-full" >
