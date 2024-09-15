@@ -21,7 +21,7 @@ const TileGroupInContext = ({tiles, className, orientation, sizeType}:{
         4: 'grid-rows-2',
         5: 'grid-rows-4',
         6: 'grid-rows-4',
-        7: 'grid-rows--6',
+        7: 'grid-rows-6',
         8: 'grid-rows-4',
         9: 'grid-rows-2',
         10: 'grid-rows-4',
