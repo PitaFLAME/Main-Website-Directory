@@ -7,7 +7,6 @@ import { getSvg } from "../SvgData";
 import { getAccent } from "../Globals";
 import { get } from "http";
 import { Quote } from "lucide-react";
-import ThingsCarousel from "./ThingsCarousel";
 import React from "react";
 
 const icons = [

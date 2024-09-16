@@ -1,12 +1,12 @@
 "use client"
 
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import PartyTime from '@/components/PartyMode/PartyButton';
+import PartyTime from '@/components/party-mode/PartyButton';
 import ContentSelector from '@/components/ContentSelector';
-import HomePage from '@/components/Home/HomePage';
+import HomePage from '@/components/home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
-import ProjectPage from '@/components/Project/ProjectPage';
-import ContactPage from '@/components/Contact/ContactPage';
+import ProjectPage from '@/components/project/ProjectPage';
+import ContactPage from '@/components/contact/ContactPage';
 
 
 const Page = () => {

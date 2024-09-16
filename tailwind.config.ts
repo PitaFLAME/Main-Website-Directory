@@ -50,6 +50,9 @@ const config: Config = {
       fontFamily: {
         poppins: ['var(--font-poppins)', "sans-serif"],
         allison: ['var(--font-allison)', 'cursive'],
+        rubik: ['var(--font-rubik)', 'sans-serif'],
+        expletus_sans: ['var(--font-expletus-sans)', 'sans-serif'],
+        goudy: ['var(--font-goudy)', 'sans-serif']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

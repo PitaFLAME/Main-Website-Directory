@@ -1,6 +1,6 @@
 
 
-import { ArrowRight, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import { getAccent } from '../Globals'
 import { getSvg } from '../SvgData'
 
