@@ -3,6 +3,7 @@
 import { ChevronRight } from 'lucide-react'
 import { getAccent } from '../Globals'
 import { getSvg } from '../SvgData'
+import Link from 'next/link'
 
 
 const content = [
@@ -12,12 +13,14 @@ const content = [
                 flex-col bottom-0 h-[90%] w-full
                 transition-opacity duration-300">
                 <div className={`absolute px-6 mt-[50%] ${getAccent(1, 'text')}`} >
+                    <Link href="/cooldowns">
                     <h1 className={`flex flex-row font-poppins text-4xl cursor-pointer
                         hover:underline hover:underline-offset-2`}>
                         Cooldowns
                         <ChevronRight className="h-9 w-9 ml-2 mt-1" />
                     </h1>
-                    <p className="font-system text-lg mt-4" >
+                    </Link>
+                    <p className="font-expletus_sans text-lg mt-4" >
                         An iOS Mobile app to help curb impulsivity.  A Dart/Flutter project, available in the iOS app store.
                     </p>
                 </div>

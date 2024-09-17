@@ -13,6 +13,7 @@ const sizeHMap: { [key: number]: string } = {
     9: 'row-span-2',
     10: 'row-span-4',
     11: 'row-span-2',
+    12: 'row-span-1',
 };
 
 const sizeWMap: { [key: number]: string } = {
@@ -27,6 +28,7 @@ const sizeWMap: { [key: number]: string } = {
     9: 'col-span-4',
     10: 'col-span-2',
     11: 'col-span-3',
+    12: 'col-span-3',
 };
 
 /* 1=1x1 2=1x2 3=2x1 4=2x2 5=4x4 6=6x4 7=4x6

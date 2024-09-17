@@ -29,7 +29,7 @@ const getIcons = () => {
 
 const content = [
     (   <div key={0} className="flex flex-col items-center">
-            <h2 className={`${getAccent(2, 'text')} text-3xl font-poppins mt-24`}>
+            <h2 className={`${getAccent(2, 'text')} text-3xl font-expletus_sans mt-24`}>
                 Hi, my name is&nbsp;
                 <span className="text-7xl ml-2 font-allison text-slate-200">Pita</span>
             </h2>
