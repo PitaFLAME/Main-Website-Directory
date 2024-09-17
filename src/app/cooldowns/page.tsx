@@ -42,9 +42,9 @@ const Home = () => {
                         In its current state, the app allows you to choose from a short list of icons to 
                         represent your Cooldown, and customize the recharge time, number of charges, and the 
                         recharge style for it. On the main Cooldowns view, your created Cooldowns will appear 
-                        as either available, or with a "dimmed" overlay to indicate how long it will be until 
+                        as either available, or with a &quot;dimmed&quot; overlay to indicate how long it will be until 
                         it is available again. The idea is to discourage the user from performing a specific 
-                        action that they want to limit by treating that action as "On Cooldown", or unavailable to them.
+                        action that they want to limit by treating that action as &quot;On Cooldown&quot;, or unavailable to them.
                         </p>
                     </div><div className="row-span-3 col-span-2" />
                     <div className="col-span-12" />
@@ -67,7 +67,7 @@ const Home = () => {
 
                     <div className="flex items-center text-slate-950 text-xl row-span-3 col-span-7">
                         <p className="indent-12">
-                        You can also expand the "Advanced" menu to specify a number of charges the cooldown has, and how 
+                        You can also expand the &quot;Advanced&quot; menu to specify a number of charges the cooldown has, and how 
                         those charges recharge. For Parallel, each expended charge of the Cooldown will recharge independently 
                         from one another. In Series, however, only one charge will recharge at a time and once one charge is 
                         available, the next one will begin recharging.
@@ -93,10 +93,10 @@ const Home = () => {
                     <div className="row-span-3 col-span-3" />
                     <div className="flex items-end row-span-3 col-span-7 text-slate-950 text-xl pl-2">
                         <p className="indent-12">
-                        The main Cooldowns view page displays all of the Cooldowns you've created. The icon will appear 
+                        The main Cooldowns view page displays all of the Cooldowns you&apos;ve created. The icon will appear 
                         normal if it is available. If the Cooldown has multiple charges available, it will have a small 
                         badge with a number to indicate how many charges are available. If a Cooldown is not available, 
-                        it will appear with an animated "dimmed" overlay and a timer to indicate how long until it is 
+                        it will appear with an animated &quot;dimmed&quot; overlay and a timer to indicate how long until it is 
                         available again.
                         </p>
                     </div>
