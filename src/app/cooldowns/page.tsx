@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <main className="h-full w-full bg-gradient-to-b from-slate-600 to-slate-700 overflow-y-scroll scroll-smooth">
 
-            <div className="fixed mt-12 w-64 h-48 -ml-32 z-10" >
+            <div className="fixed mt-12 w-64 h-48 -ml-32 z-20" >
                 <Tile accentID={9} orientation={2} render={getContent(0)} />
             </div>
 
