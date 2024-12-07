@@ -34,9 +34,9 @@ const content = [
             
 
         </div> ), ( <div key={1} className="relative flex flex-row items-center group gap-4 p-6 h-full w-full" >
-            <div className="relative flex items-center h-full w-56 ml-auto">
-                <Circle className={`h-56 w-56 ${getAccent(8, 'text')}`} />
-                {getSvg(7, 8, "absolute w-44 h-44 left-6 bottom-10")}
+            <div className="grid columns-1 ml-auto">
+                <Circle className={`h-56 w-56 ${getAccent(8, 'text')} row-start-1 col-start-1`} />
+                {getSvg(7, 8, "w-44 h-44 row-start-1 col-start-1 ml-6 mt-6")}
             </div>
             <ChevronRight className={`w-24 h-24 -ml-6 ${getAccent(8, 'text')} ${getAccent(6, 'group-hover:text')}`} />
 
@@ -66,7 +66,9 @@ const content = [
 
             <div className="grid columns-1">
                 <Circle className={`h-56 w-56 ${getAccent(7, 'text')} row-start-1 col-start-1`} />
-                {getSvg(7, 7, "w-44 h-44 row-start-1 col-start-1 ml-6 mt-6")}
+                <div className="flex justify-center col-start-1 row-start-1">
+                    {getSvg(8, 7, "w-32 h-32 mt-12")}
+                </div>
             </div>
             
             {/*<div className="relative grid grid-cols-4 gap-6 mt-3 max-w-68">

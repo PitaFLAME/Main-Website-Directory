@@ -7,6 +7,7 @@ import HomePage from '@/components/Home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
 import ProjectPage from '@/components/Project/ProjectPage';
 import ContactPage from '@/components/Contact/ContactPage';
+import StarAnimation from '@/components/Stars/StarAnimation';
 
 
 const Page = () => {
@@ -15,6 +16,8 @@ const Page = () => {
 
   return (
     <main className="bg-gradient-to-br from-slate-950 to-slate-950">
+
+        <StarAnimation />
 
         <MaxWidthWrapper className='relative flex flex-col justify-center items-center h-screen'>
           { activePage === 1 ? <ProjectPage />
