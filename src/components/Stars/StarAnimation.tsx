@@ -16,14 +16,22 @@ class Star {
     position: [number, number];
     visual: React.ReactNode;
     expiresAt: Date;
+    exists: boolean;
+    symbolDeterminant: number;
 
     constructor(position: [number, number], expiresAt: Date) {
         this.position = position;
-        this.visual = (<StarVisual symbolID={Math.floor(Math.random() * 5)}/>);
         this.expiresAt = expiresAt;
+        this.exists = false;
+        this.symbolDeterminant = Math.floor(Math.random() * 120)
+        this.visual = (<StarVisual symbolDeterminant={this.symbolDeterminant} exists={this.exists}/>);
     }
 
-    hasExpired(): boolean { return new Date() > this.expiresAt; }
+    hasExpired(): boolean { 
+      this.exists = true;
+      this.visual = (<StarVisual symbolDeterminant={this.symbolDeterminant} exists={this.exists}/>);
+      return new Date() > this.expiresAt; 
+    }
 
 }
 
@@ -41,11 +49,8 @@ const getStarSymbol = ():React.ReactNode => {
 
 
 
-
-
-
 const StarAnimation = () => {
-  const [_, setForceUpdate] = useState(0); // Trigger manual re-renders
+  const [_, setForceUpdate] = useState(0);
   const stars = useRef<Star[]>([]);
   let starCount = 25;
 
@@ -121,7 +126,7 @@ const StarAnimation = () => {
   }, []);
 
   return (
-    <div className="absolute grid grid-cols-48 grid-rows-48 gap-2 w-full h-full">
+    <div className="absolute grid grid-cols-48 grid-rows-48 gap-2 w-full h-full overflow-hidden">
       {
         stars.current.map((star, index) => {
           const [col, row] = star.position;
