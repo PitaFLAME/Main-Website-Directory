@@ -5,7 +5,6 @@ import React, { useEffect, useRef } from 'react';
 * Author: Pita Sherwood
 * Inspiration for the implementation of this star system goes to: Cory Hughart
 * 
-
 */
 
 
@@ -14,7 +13,9 @@ interface Star {
   y: number;
   z: number;
   opacity: number;
+  fullOpacity: number;
   flicker: number;
+  createdAt: number;
   expiresAt: number;
   fadeStartTime?: number;
 }
@@ -81,8 +82,10 @@ const StarAnimation = () => {
     x: getRandom(-0.1, 1.1),
     y: getRandom(-0.1, 1.1),
     z: getRandom(0, 7),
-    opacity: isForeground ? getRandom(0.25, 1) : getRandom(0.08, 0.3),
+    opacity: 0,
+    fullOpacity: isForeground ? getRandom(0.25, 1) : getRandom(0.08, 0.3),
     flicker: 0,
+    createdAt: Date.now(),
     expiresAt: Date.now() + STAR_LIFESPAN + Math.floor(Math.random() * STAR_LIFESPAN_VARIANCE),
   });
 
@@ -193,6 +196,9 @@ const StarAnimation = () => {
   ) => {
     const radius = ((star.z * PARTICLE_SIZE_MULTIPLIER) + PARTICLE_SIZE_BASE) * (sizeRatio / 1000);
     let opacity = star.opacity;
+
+    const fadeInProgress = Math.min(1, (currentTime - star.createdAt) / STAR_FADE_DURATION);
+    opacity = star.fullOpacity * fadeInProgress;
 
     if (currentTime >= star.expiresAt - STAR_FADE_DURATION) {
       if (!star.fadeStartTime) {
