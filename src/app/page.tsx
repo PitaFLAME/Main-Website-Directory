@@ -7,7 +7,7 @@ import HomePage from '@/components/Home/HomePage';
 import { PageProvider, usePageContext } from '@/components/PageContext';
 import ProjectPage from '@/components/Project/ProjectPage';
 import ContactPage from '@/components/Contact/ContactPage';
-import StarAnimation from '@/components/Stars/StarAnimation';
+import StarAnimation from '@/components/Stars/StarCanvas';
 
 
 const Page = () => {
@@ -15,7 +15,7 @@ const Page = () => {
   const { activePage } = usePageContext()
 
   return (
-    <main className="bg-gradient-to-br from-slate-950 to-slate-950">
+    <main className="bg-gradient-to-br from-slate-950 to-[#03091F]">
 
         <StarAnimation />
 
