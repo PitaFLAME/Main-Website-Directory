@@ -14,7 +14,7 @@ const ContentTile = ({accentID, render, linkTo, sizeType, orientation}:{
     const size = sizeType ? getSize(sizeType) : ['row-span-1','col-span-1', null];
     
     const accent = Array.isArray(accentID) ? `bg-gradient ${getAccent(accentID[0], 'from')} ${getAccent(accentID[1], 'to')}` 
-        :  `${getAccent(accentID, 'bg')} bg-opacity-70`
+        :  `${getAccent(accentID, 'bg')} bg-opacity-40 backdrop-blur-md`
 
 
         const transformStyle =

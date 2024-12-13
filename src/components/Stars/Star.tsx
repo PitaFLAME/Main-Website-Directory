@@ -8,9 +8,9 @@ const StarVisual = ({symbolDeterminant, exists}:{
 }) => {
 
   const symbolID = 
-        symbolDeterminant >= 114 ? 12
-      : symbolDeterminant >= 112 ? 11
-      : symbolDeterminant >= 110 ? 10
+        symbolDeterminant >= 117 ? 12
+      : symbolDeterminant >= 116 ? 11
+      : symbolDeterminant >= 115 ? 10
       : symbolDeterminant >= 98  ? 9
       : symbolDeterminant >= 90  ? 8
       : symbolDeterminant >= 82  ? 7
@@ -44,7 +44,7 @@ const StarVisual = ({symbolDeterminant, exists}:{
           scale: 0.5,
         }}
         transition={{
-          duration: 1,
+          duration: 4,
           ease: "easeInOut",
         }}
       >
