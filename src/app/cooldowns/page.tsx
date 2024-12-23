@@ -12,7 +12,7 @@ const Home = () => {
                        text-slate-950 text-md lg:text-xl">
 
             <div className="fixed mt-12 w-64 h-48 -ml-32 z-20" >
-                <Tile accentID={9} orientation={2} render={getContent(0)} />
+                <Tile accentID={9} orientation={2} contentID={getContent(0)} />
             </div>
 
             <MaxWidthWrapper className="relative mb-24">
@@ -49,7 +49,7 @@ const Home = () => {
                         </p>
                     </div><div className="row-span-3 col-span-2" />
                     <div className="col-span-12" />
-                    <Tile accentID={3} sizeType={2} orientation={2} render={getContent(1)} />
+                    <Tile accentID={3} sizeType={2} orientation={2} contentID={getContent(1)} />
                     <div className="col-span-10" />
                     <div className="flex items-end row-span-2 col-span-11">
                         <p className="indent-12">
@@ -109,7 +109,7 @@ const Home = () => {
                     h-[70vh] w-full gap-2 bg-slate-100 opacity-90">
                     
                     <div className="row-span-4 col-span-12" />
-                    <Tile accentID={3} sizeType={12} orientation={2} render={getContent(2)} />
+                    <Tile accentID={3} sizeType={12} orientation={2} contentID={getContent(2)} />
                     <div className="col-span-9" />
                     <div className="row-span-4" />
                     <div className="col-span-8 row-span-4">

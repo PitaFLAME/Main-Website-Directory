@@ -24,9 +24,7 @@ export const getSvg = (svgID: number, accent?: number, className?: string) => {
                 id="Layer_2" data-name="Layer 2" 
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.2 40.2">
                 <defs>
-                    <style>
-                        {`.cls-1{stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:0.6px;}`}
-                    </style>
+                    
                 </defs>
                 <line className="cls-1" x1="5.05" y1="5.05" x2="0.1" y2="0.1" />
                 <line className="cls-1" x1="0.1" y1="40.1" x2="5.05" y2="35.15" />
@@ -109,7 +107,7 @@ export const getSvg = (svgID: number, accent?: number, className?: string) => {
         ), ( // Library Icon
             <svg key={7} className={`${getAccent(accent ? accent : 1, 'fill')} ${className}`}
                 width="800px" height="800px" viewBox="0 0 512 512">
-                <g id="Page-1" stroke="none" stroke-width="1">
+                <g id="Page-1" stroke="none" strokeWidth="1">
                     <g id="Combined-Shape" transform="translate(42.666667, 85.333333)">
                         <path d="M3.55271368e-14,298.666667 L426.666667,298.666667 L426.666667,341.333333 
                                  L3.55271368e-14,341.333333 L3.55271368e-14,298.666667 Z M42.6666667,1.42108547e-14 
