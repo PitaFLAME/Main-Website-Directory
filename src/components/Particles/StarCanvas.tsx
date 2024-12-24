@@ -115,8 +115,8 @@ const StarAnimation = () => {
 
     const constellationMultiplier = Math.min((window.innerHeight  / 896), (window.innerWidth / 1280));
     const connectionRadius = CONNECTION_RADIUS * constellationMultiplier;
-    console.log(connectionRadius + " = " + CONNECTION_RADIUS + " * " + constellationMultiplier);
 
+  
     const tooCloseToExisting = connectionsRef.current.some(existingConnection => {
       const distance = calculateDistance(originPoint, existingConnection.originPoint);
       return distance <= connectionRadius;

@@ -24,10 +24,10 @@ const ContentTile = ({accentID, contentID, sizeType, orientation, clickable}:{
     const accent = `${getAccent(accentID, 'bg')} bg-opacity-40 backdrop-blur-md`
 
     const transformStyle =
-        orientation === 1 ? `hover:-translate-y-[${Math.floor(medallionSize * 220)}px]` :
-        orientation === 2 ? `hover:translate-x-[${Math.floor(medallionSize * 220)}px]` :
-        orientation === 3 ? `hover:translate-y-[${Math.floor(medallionSize * 220)}px]` :
-        orientation === 4 ? `hover:-translate-x-[${Math.floor(medallionSize * 220)}px]` :
+        orientation === 1 ? `hover:-translate-y-[3vw]` :
+        orientation === 2 ? `hover:translate-x-[3vw]` :
+        orientation === 3 ? `hover:translate-y-[3vw]` :
+        orientation === 4 ? `hover:-translate-x-[3vw]` :
         '';
 
     const clickedTransformStyle = 
@@ -42,9 +42,9 @@ const ContentTile = ({accentID, contentID, sizeType, orientation, clickable}:{
         back?: React.ReactNode;
     }
 
-    if (clickable && contentID) { content = { front: getContent(contentID), back: getContent(contentID, true)} }
-    else if (contentID) { content = { front: getContent(contentID)}}
-    else { content = { front: (<></>)}}
+    if (clickable && contentID !== undefined) { content = { front: getContent(contentID), back: getContent(contentID, true)}; console.log("Tile call a ", contentID); }
+    else if (contentID !== undefined) { content = { front: getContent(contentID)}; console.log("Tile call b ", contentID); }
+    else { content = { front: (<></>)}; console.log("Tile call c ", contentID);}
 
     return (
         clickable ? (

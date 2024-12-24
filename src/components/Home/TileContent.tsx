@@ -1,7 +1,6 @@
 "use client"
 
 
-import StackIcon from "tech-stack-icons"
 import { getSvg } from "../SvgData";
 import { getAccent } from "../Globals";
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle, Quote } from "lucide-react";
@@ -21,6 +20,7 @@ const TileContent = ({contentID, back}:{
     back?: boolean;
 }) => {
 
+
     const { activeReader, setActiveReader } = usePageContext();
     const medallionSize = useRef(0);
     medallionSize.current = useMedallionSize();
@@ -34,29 +34,16 @@ const TileContent = ({contentID, back}:{
         }
     }
 
-    const getIcons = () => {
-        return icons.map((icon, i) => ( <div key={i} className="relative flex items-center justify-center -mb-3 group">
-                                            <div className="absolute h-[180%] w-[180%] group" />
-                                            <StackIcon key={i} name={icon} grayscale={false} className="max-h-12 max-w-12" />
-                                            <div className={`absolute opacity-60 group-hover:opacity-10 h-full w-full top-0
-                                                ${getAccent(8, 'bg')}`} />
-                                        </div>
-        ));
-    }
-
-
-
 
     const content: {
         front: React.ReactNode;
         back?: React.ReactNode;
-    }[] = [
-        { front: (
+    }[] = [{ front: (
             <div key={0} className="flex flex-col items-center justify-center w-full h-full">
                 <ResponsiveText type={2} size={1}
                                 className={`${getAccent(2, 'text')} font-expletus_sans`}>
-                    Hi, my name is&nbsp;
-                    <span className="text-[240%] ml-2 font-allison text-slate-200">Pita</span>
+                    Hi, my name is&nbsp;&nbsp;
+                    <span className="text-[240%] font-allison text-slate-200">Pita</span>
                 </ResponsiveText>
                 
             </div> )}, { front: ( <div key={1} className="relative flex flex-row items-center group p-[6%] h-full w-full" >
@@ -80,17 +67,6 @@ const TileContent = ({contentID, back}:{
                                          style={getMedallionSize({px:110})} />
                         </div>
                 )}, { front: ( <div key={2} className="flex flex-col px-[8%] py-[10%] justify-end items-center h-full w-full group">
-                    {/*<h2 className={`text-2xl mb-2.5 ml-2 font-poppins w-full ${getAccent(2, 'text')}`}>
-                        My Stack
-                    </h2>*/}
-
-                    {/*<ResponsiveText type={2}
-                        size={1.1}
-                        className={`${getAccent(6, 'text')} font-rubik group opacity-0 group-hover:opacity-100 mb-auto
-                                    transition-opacity duration-400`} >
-                        My Stack
-                    </ResponsiveText>*/}
-
                     {/* Hit box for click */}
                     <div className="absolute w-[80%] h-[70%] group cursor-pointer bottom-0"
                         onClick={() => setActiveReader(2)} />
@@ -102,14 +78,7 @@ const TileContent = ({contentID, back}:{
                             {getSvg(8, 7,  `w-full h-full m-[21%]`)}
                         </div>
                     </div>
-                    
-                    {/*<div className="relative grid grid-cols-4 gap-6 mt-3 max-w-68">
-                        {getIcons()}
-                    </div>*/}
-                
-                </div> ),
-            
-                back: (
+                </div> ), back: (
                     <div className="flex justify-center w-full h-full cursor-pointer" 
                             onClick={() => setActiveReader(0)}>
                         <ChevronDown className={`${getAccent(8, 'text')} mb-auto`}
@@ -148,6 +117,10 @@ const TileContent = ({contentID, back}:{
                 <h2>Full </h2>
             </div> )}
     ]
+
+    console.log("contentID: ", contentID);
+    console.log("content[contentID]:", content[contentID]);
+    console.log("front: ", content[contentID]?.front);
 
     return back ? content[contentID].back : content[contentID].front;
 }

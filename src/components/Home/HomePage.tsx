@@ -42,10 +42,12 @@ const HomePage = () => {
         <div className="flex items-center justify-center col-start-1 row-start-1" 
              style={{ width: `${mainSize.width + 12}px`, height: `${mainSize.height + 12}px` }}>
             
-                <div className={`h-full w-full bg-slate-900 border-[6px] border-slate-950/50 rounded-xl z-50
+                <div className={`h-full w-full bg-slate-900 border-[6px] border-slate-950/50 rounded-xl z-50 -ml-[6px] -mt-[6px]
                                  transition-transform duration-300 ${activeReader !== 0 ? `scale-100 delay-300` : `scale-0`}
                                  ${getAccent(3, 'text')} py-[2%] px-[5%] font-poppins`}>
-                    <Reader readerID={activeReader} />
+                    <div className="relative w-full h-full">
+                      <Reader readerID={activeReader} />
+                    </div>
                 </div>
         </div>
         
