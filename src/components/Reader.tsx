@@ -1,10 +1,8 @@
-import { ResponsiveText } from "@/utils/getSize";
+import { ResponsiveText, useMedallionSize } from "@/utils/getSize";
 import { getAccent } from "./Globals";
 import { useState } from "react";
 import { getSvg } from "./SvgData";
-import { px } from "framer-motion";
-
-
+import { useMemo } from "react";
 
 
 
@@ -19,13 +17,36 @@ const Reader = ({readerID}:{
     image: number;
     id: number;
   }) => {
+
+    const medallionSize = useMedallionSize();
+    const height = useMemo(() => medallionSize * 80, [medallionSize])
+
+    console.log(height)
     return (
-      <div className={`flex justify-center h-20 w-full ${override === 0 ? "hover:scale-125" : ""} transition-transform duration-200 
-                      ${override === id ? "scale-125" : ""}`} 
+      <div className={`flex justify-center w-full ${override === 0 ? "hover:scale-125" : ""} transition-transform duration-200 
+                      ${override === id ? "scale-125" : ""}`}
+           style={{height: height}}
            onMouseEnter={() => setSelector(id)}
            onClick={() => setOverride(id)}
            onMouseLeave={() => setSelector(0)}>
         {getSvg(image, 5, "h-full")}
+      </div>
+    )
+  }
+
+  const StackImageDescription = ({id, title, children}:{
+    id: number;
+    title: string;
+    children?: React.ReactNode;
+  }) => {
+
+    return (
+      <div className={`absolute flex flex-col items-center px-[4%] transition-transform duration-400 
+           ${(selector === id  && override === 0) || override === id ? "opacity-100" : "opacity-0"}`}>
+        <ResponsiveText type={1} size={0.6}>{title}</ResponsiveText>
+        <ResponsiveText type={1} size={0.5} className={`${getAccent(4, 'text')} text-center`}>
+          {children}
+        </ResponsiveText>
       </div>
     )
   }
@@ -142,88 +163,76 @@ const Reader = ({readerID}:{
       <div className={`absolute top-0 w-full h-[80%] ${override === 0 ? "hidden" : ""}`} 
            onClick={() => setOverride(0)}/>
       <div className={`absolute flex justify-center w-full h-[20%] bottom-[4%] py-[2%] rounded-2xl ${getAccent(10, 'bg')}`}>
-        {
-          (selector === 1  && override === 0) || override === 1 ?
-          <div className="flex flex-col items-center px-[4%] transition-opacity duration-100">
-            <ResponsiveText type={1} size={0.6}>Visual Studio Code</ResponsiveText>
-            <ResponsiveText type={1} size={0.5} className={`${getAccent(4, 'text')} text-center`}>
-              Home, in a lot of senses. I do the majority of my work in this text editor.  The extensions available 
-              for this tool are a strong draw for me.
-            </ResponsiveText>
-          </div> :
-          (selector === 2  && override === 0) || override === 2 ?
-          <div className="flex flex-col items-center px-[4%] transition-opacity duration-100">
-            <ResponsiveText type={1} size={0.6}>Git</ResponsiveText>
-            <ResponsiveText type={1} size={0.5} className={`${getAccent(4, 'text')} text-center`}>
-              I run my organization through GitHub and deploy through GitHub. I like to think I have a very good
-              understanding of GitFlows and work via Git.
-            </ResponsiveText>
-          </div> :
-          (selector === 3  && override === 0) || override === 3 ?  <div>3
+        <StackImageDescription id={1} title="Visual Studio Code">
+          Home, in a lot of senses. I do the majority of my work in this text editor. The extensions available for this tool are a strong draw for me.
+        </StackImageDescription>
+        <StackImageDescription id={2} title="Git">
+          I run my organization through GitHub and deploy through GitHub. I like to think I have a very good understanding of GitFlows and work via Git.
+        </StackImageDescription>
+        <StackImageDescription id={3} title="Java">
 
-          </div> :
-          (selector === 4  && override === 0) || override === 4 ?  <div>4
+        </StackImageDescription>
+        <StackImageDescription id={4} title="C++">
 
-          </div> :
-          (selector === 5  && override === 0) || override === 5 ?  <div>5
+        </StackImageDescription>
+        <StackImageDescription id={5} title="C#">
 
-          </div> :
-          (selector === 6  && override === 0) || override === 6 ?  <div>6
+        </StackImageDescription>
+        <StackImageDescription id={6} title="Python">
 
-          </div> :
-          (selector === 7  && override === 0) || override === 7 ?  <div>7
+        </StackImageDescription>
+        <StackImageDescription id={7} title="TypeScript">
 
-          </div> :
-          (selector === 8  && override === 0) || override === 8 ?  <div>8
+        </StackImageDescription>
+        <StackImageDescription id={8} title="Next.js">
 
-          </div> :
-          (selector === 9  && override === 0) || override === 9 ?  <div>9
+        </StackImageDescription>
+        <StackImageDescription id={9} title="React">
 
-          </div> :
-          (selector === 10 && override === 0) || override === 10 ? <div>10
+        </StackImageDescription>
+        <StackImageDescription id={10} title="TailwindCSS">
 
-          </div> :
-          (selector === 11 && override === 0) || override === 11 ? <div>11
+        </StackImageDescription>
+        <StackImageDescription id={11} title="MongoDB">
 
-          </div> :
-          (selector === 12 && override === 0) || override === 12 ? <div>12
+        </StackImageDescription>
+        <StackImageDescription id={12} title="MySQL">
 
-          </div> :
-          (selector === 13 && override === 0) || override === 13 ? <div>13
+        </StackImageDescription>
+        <StackImageDescription id={13} title="JavaScript">
 
-          </div> :
-          (selector === 14 && override === 0) || override === 14 ? <div>14
+        </StackImageDescription>
+        <StackImageDescription id={14} title="HTML">
 
-          </div> :
-          (selector === 15 && override === 0) || override === 15 ? <div>15
+        </StackImageDescription>
+        <StackImageDescription id={15} title="CSS">
 
-          </div> :
-          (selector === 16 && override === 0) || override === 16 ? <div>16
+        </StackImageDescription>
+        <StackImageDescription id={16} title="Dart">
 
-          </div> :
-          (selector === 17 && override === 0) || override === 17 ? <div>17
+        </StackImageDescription>
+        <StackImageDescription id={17} title="Flutter">
 
-          </div> :
-          (selector === 18 && override === 0) || override === 18 ? <div>18
+        </StackImageDescription>
+        <StackImageDescription id={18} title="Swift">
 
-          </div> :
-          (selector === 19 && override === 0) || override === 19 ? <div>19
+        </StackImageDescription>
+        <StackImageDescription id={19} title="DigitalOcean">
 
-          </div> :
-          (selector === 20 && override === 0) || override === 20 ? <div>20
+        </StackImageDescription>
+        <StackImageDescription id={20} title="Framer">
 
-          </div> :
-          (selector === 21 && override === 0) || override === 21 ? <div>21
+        </StackImageDescription>
+        <StackImageDescription id={21} title="Figma">
 
-          </div> :
-          (selector === 22 && override === 0) || override === 22 ? <div>22
+        </StackImageDescription>
+        <StackImageDescription id={22} title="Adobe Photoshop">
 
-          </div> :
-          (selector === 23 && override === 0) || override === 23 ? <div>23
-            
-          </div> :
-          <></>
-        }
+        </StackImageDescription>
+        <StackImageDescription id={23} title="Adobe Illustrator">
+
+        </StackImageDescription>
+
       </div>
 
 

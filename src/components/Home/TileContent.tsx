@@ -118,10 +118,6 @@ const TileContent = ({contentID, back}:{
             </div> )}
     ]
 
-    console.log("contentID: ", contentID);
-    console.log("content[contentID]:", content[contentID]);
-    console.log("front: ", content[contentID]?.front);
-
     return back ? content[contentID].back : content[contentID].front;
 }
 

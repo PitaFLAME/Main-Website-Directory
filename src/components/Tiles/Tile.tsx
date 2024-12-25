@@ -42,9 +42,9 @@ const ContentTile = ({accentID, contentID, sizeType, orientation, clickable}:{
         back?: React.ReactNode;
     }
 
-    if (clickable && contentID !== undefined) { content = { front: getContent(contentID), back: getContent(contentID, true)}; console.log("Tile call a ", contentID); }
-    else if (contentID !== undefined) { content = { front: getContent(contentID)}; console.log("Tile call b ", contentID); }
-    else { content = { front: (<></>)}; console.log("Tile call c ", contentID);}
+    if (clickable && contentID !== undefined) { content = { front: getContent(contentID), back: getContent(contentID, true)} }
+    else if (contentID !== undefined) { content = { front: getContent(contentID)} }
+    else { content = { front: (<></>)} }
 
     return (
         clickable ? (
