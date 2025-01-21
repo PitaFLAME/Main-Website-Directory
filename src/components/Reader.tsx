@@ -21,7 +21,7 @@ const Reader = ({readerID}:{
     const medallionSize = useMedallionSize();
     const height = useMemo(() => medallionSize * 80, [medallionSize])
 
-    console.log(height)
+    console.log(medallionSize);
     return (
       <div className={`flex justify-center w-full ${override === 0 ? "hover:scale-125" : ""} transition-transform duration-200 
                       ${override === id ? "scale-125" : ""}`}
@@ -160,56 +160,59 @@ const Reader = ({readerID}:{
         <StackImage image={9} id={23} />  {/* Illustrator */}
 
       </div>
+      
+      { /* Hit box to disable override once activated */}
       <div className={`absolute top-0 w-full h-[80%] ${override === 0 ? "hidden" : ""}`} 
            onClick={() => setOverride(0)}/>
+
       <div className={`absolute flex justify-center w-full h-[20%] bottom-[4%] py-[2%] rounded-2xl ${getAccent(10, 'bg')}`}>
         <StackImageDescription id={1} title="Visual Studio Code">
-          Home, in a lot of senses. I do the majority of my work in this text editor. The extensions available for this tool are a strong draw for me.
+          This is where most of my work happens. Visual Studio Code is my go-to text editor for everything from front-end to back-end development. The vast array of extensions available makes it easy to customize and optimize for any task I&apos;m tackling.
         </StackImageDescription>
         <StackImageDescription id={2} title="Git">
-          I run my organization through GitHub and deploy through GitHub. I like to think I have a very good understanding of GitFlows and work via Git.
+          Git is the backbone of my workflow. I manage my projects and collaborate with teams using GitHub, and I&apos;m very comfortable with GitFlows for version control and deployment. I value its flexibility and reliability in tracking code changes across projects.
         </StackImageDescription>
         <StackImageDescription id={3} title="Java">
-
+          My academic background is rooted in Java, making it my strongest object-oriented programming language. I enjoy its robustness, scalability, and extensive ecosystem, which makes it ideal for everything from small projects to large enterprise applications.
         </StackImageDescription>
         <StackImageDescription id={4} title="C++">
-
+          One of my favorite languages.  Incredibly versatile and low level.
         </StackImageDescription>
         <StackImageDescription id={5} title="C#">
-
+          I primarily used this in combination with the Unity engine.  
         </StackImageDescription>
         <StackImageDescription id={6} title="Python">
-
+          The first language I ever learned.  I primarily used this with data science applications and scripting.
         </StackImageDescription>
         <StackImageDescription id={7} title="TypeScript">
-
+          I enjoy type safety with JavaScript.  The extra effort to make a better program is always worth it.
         </StackImageDescription>
         <StackImageDescription id={8} title="Next.js">
-
+          My framework of choice for React-based web apps.  I've come to appreciate many of its features as I learned to work with it.
         </StackImageDescription>
         <StackImageDescription id={9} title="React">
-
+          Component-based architecture and dynamic site generation were a game changer for me.  I feel like web development truly became progrogramming for me after I learned React.
         </StackImageDescription>
         <StackImageDescription id={10} title="TailwindCSS">
-
+          Inline CSS is preferable for me.  The flexibility of Tailwind makes web development so much easier.
         </StackImageDescription>
         <StackImageDescription id={11} title="MongoDB">
-
+          The first database technology that I fully learned.  I turn to it for most of my data needs.
         </StackImageDescription>
         <StackImageDescription id={12} title="MySQL">
-
+          I hardly find myself needing relational applications, but it's come in handy in a few instances.
         </StackImageDescription>
         <StackImageDescription id={13} title="JavaScript">
-
+          The foundation of modern web development.  Even with its quirks, I've still enjoyed using it.
         </StackImageDescription>
         <StackImageDescription id={14} title="HTML">
-
+          The starting point of my web development journey.  A simple structure system, but I've enjoyed learning its expansiveness
         </StackImageDescription>
         <StackImageDescription id={15} title="CSS">
-
+          Styling was one of the hardest things I had to learn, but I enjoyed learning about its different tools and capabilities.
         </StackImageDescription>
         <StackImageDescription id={16} title="Dart">
-
+          Paired with the Flutter framework, it was my go-to for mobile development.  Its widget-based structure was interesting to learn.
         </StackImageDescription>
         <StackImageDescription id={17} title="Flutter">
 
