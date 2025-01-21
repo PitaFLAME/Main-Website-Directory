@@ -1,3 +1,4 @@
+import { useConstellationMultiplier } from '@/utils/getSize';
 import React, { useEffect, useRef } from 'react';
 
 /* 
@@ -56,9 +57,9 @@ const StarAnimation = () => {
   const INIT_B_STARS = 160;
   const MIN_B_STARS = 120;
   const MAX_B_STARS = 200;
-  const STAR_LIFESPAN = 10000;
-  const STAR_LIFESPAN_VARIANCE = 4000;
-  const STAR_FADE_DURATION = 2000; 
+  const STAR_LIFESPAN = 30000;
+  const STAR_LIFESPAN_VARIANCE = 16000;
+  const STAR_FADE_DURATION = 2000;
   const STAR_CREATION_INTERVAL = 200;
   const MOTION_FACTOR = 0.02;
   const STAR_COLOR = '#FFEED4'
@@ -66,7 +67,7 @@ const StarAnimation = () => {
   const PARTICLE_SIZE_MULTIPLIER = 0.2;
   const LINE_WIDTH = 0.4;
   const FLICKER_SMOOTHING = 50;
-  const CONNECTION_RADIUS = 300;
+  const CONNECTION_RADIUS = 200;
   const MIN_STARS_FOR_CONNECTION = 6;
   const MAX_CONNECTIONS = 2;
   const CONNECTION_CREATION_CHANCE = 1;
@@ -74,9 +75,12 @@ const StarAnimation = () => {
   const CONNECTION_LIFESPAN_VARIANCE = 1800;
   const LINE_SPEED = 9.8;
 
+
   const getRandom = (min: number, max: number): number => {
     return Math.random() * (max - min) + min;
   };
+
+
 
   const getStar = (isForeground: boolean): Star => ({
     x: getRandom(-0.1, 1.1),
@@ -95,7 +99,11 @@ const StarAnimation = () => {
     return Math.sqrt(dx * dx + dy * dy);
   };
 
-  const getConnection = (canvasWidth: number, canvasHeight: number): Connection | null => {
+  const getConnection = ({canvasWidth, canvasHeight}:{
+    canvasWidth: number,
+    canvasHeight: number
+  }): Connection | null => {
+
     if (Math.random() * 100 > CONNECTION_CREATION_CHANCE) {
       return null;
     }
@@ -104,10 +112,14 @@ const StarAnimation = () => {
       x: Math.random() * canvasWidth,
       y: Math.random() * canvasHeight
     };
+
+    const constellationMultiplier = Math.min((window.innerHeight  / 896), (window.innerWidth / 1280));
+    const connectionRadius = CONNECTION_RADIUS * constellationMultiplier;
+
   
     const tooCloseToExisting = connectionsRef.current.some(existingConnection => {
       const distance = calculateDistance(originPoint, existingConnection.originPoint);
-      return distance <= CONNECTION_RADIUS;
+      return distance <= connectionRadius;
     });
   
     if (tooCloseToExisting) {
@@ -116,7 +128,7 @@ const StarAnimation = () => {
   
     const nearbyStars = foregroundStarsRef.current.filter(star => {
       const starPos = calculatePosition(star, canvasWidth, canvasHeight, mouseRef.current.x, mouseRef.current.y);
-      return calculateDistance(originPoint, starPos) <= CONNECTION_RADIUS;
+      return calculateDistance(originPoint, starPos) <= connectionRadius;
     });
 
     nearbyStars.forEach(star => {
@@ -311,7 +323,7 @@ const StarAnimation = () => {
     
 
     if (connectionsRef.current.length < MAX_CONNECTIONS) {
-      const newConnection = getConnection(width, height);
+      const newConnection = getConnection({canvasWidth: width, canvasHeight: height});
       if (newConnection) {
         connectionsRef.current.push(newConnection);
       }
@@ -357,6 +369,7 @@ const StarAnimation = () => {
       canvas.height = window.innerHeight;
     };
 
+    
     const animate = () => {
       handleResize();
       render(context, canvas.width, canvas.height);
