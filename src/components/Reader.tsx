@@ -188,7 +188,7 @@ const Reader = ({readerID}:{
           I enjoy type safety with JavaScript.  The extra effort to make a better program is always worth it.
         </StackImageDescription>
         <StackImageDescription id={8} title="Next.js">
-          My framework of choice for React-based web apps.  I've come to appreciate many of its features as I learned to work with it.
+          My framework of choice for React-based web apps.  I&apos;ve come to appreciate many of its features as I learned to work with it.
         </StackImageDescription>
         <StackImageDescription id={9} title="React">
           Component-based architecture and dynamic site generation were a game changer for me.  I feel like web development truly became progrogramming for me after I learned React.
@@ -200,13 +200,13 @@ const Reader = ({readerID}:{
           The first database technology that I fully learned.  I turn to it for most of my data needs.
         </StackImageDescription>
         <StackImageDescription id={12} title="MySQL">
-          I hardly find myself needing relational applications, but it's come in handy in a few instances.
+          I hardly find myself needing relational applications, but it&apos;s come in handy in a few instances.
         </StackImageDescription>
         <StackImageDescription id={13} title="JavaScript">
-          The foundation of modern web development.  Even with its quirks, I've still enjoyed using it.
+          The foundation of modern web development.  Even with its quirks, I&apos;ve still enjoyed using it.
         </StackImageDescription>
         <StackImageDescription id={14} title="HTML">
-          The starting point of my web development journey.  A simple structure system, but I've enjoyed learning its expansiveness
+          The starting point of my web development journey.  A simple structure system, but I&apos;ve enjoyed learning its expansiveness
         </StackImageDescription>
         <StackImageDescription id={15} title="CSS">
           Styling was one of the hardest things I had to learn, but I enjoyed learning about its different tools and capabilities.
